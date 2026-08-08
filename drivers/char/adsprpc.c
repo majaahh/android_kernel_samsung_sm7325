@@ -1488,7 +1488,8 @@ static int fastrpc_mmap_create(struct fastrpc_file *fl, int fd,
 		}
 	} else if (mflags & FASTRPC_DMAHANDLE_NOMAP) {
 		if (map->attr & FASTRPC_ATTR_KEEP_MAP) {
-			pr_err("Invalid attribute 0x%x for fd %d\n", map->attr, fd);
+			ADSPRPC_ERR("Invalid attribute 0x%x for fd %d\n",
+				map->attr, fd);
 			err = -EINVAL;
 			goto bail;
 		}
