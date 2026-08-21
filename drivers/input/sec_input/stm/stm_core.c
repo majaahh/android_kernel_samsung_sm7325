@@ -1830,8 +1830,8 @@ static void stm_ts_status_event(struct stm_ts_data *ts, u8 *event_buff)
 	} else if (p_event_status->stype == STM_TS_EVENT_STATUSTYPE_VENDORINFO) {
 		if (ts->plat_data->support_ear_detect) {
 			if (p_event_status->status_id == 0x6A) {
-				if (ts->plat_data->power_state == SEC_INPUT_STATE_LPM || ts->plat_data->coord[t_id].y < 700 && ts->plat_data->coord[t_id].x > 900
-				    && ts->plat_data->coord[t_id].x < 3000) {
+				if (ts->plat_data->power_state == SEC_INPUT_STATE_LPM || (ts->plat_data->coord[t_id].y < 700 && ts->plat_data->coord[t_id].x > 900
+				    && ts->plat_data->coord[t_id].x < 3000)) {
 					// Report actual range when either the area around the sensor is touched or if panel is in LPM state
 					p_event_status->status_data_1 = p_event_status->status_data_1 == 5 || !p_event_status->status_data_1;
 				} else {
