@@ -6451,6 +6451,12 @@ CONFIG_SUPPORT_HV_CTRL=y
 # CONFIG_BATTERY_SAMSUNG_REBOOT is not set
 # CONFIG_SBP_FG is not set
 # end of Samsung Battery Common drivers
+
+#
+# KernelSU
+#
+# CONFIG_KSU is not set
+# end of KernelSU
 # end of Device Drivers
 
 #
